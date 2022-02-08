@@ -22,8 +22,6 @@ VALUES ('Hail','10m/s');
 
 INSERT INTO competition_rain (time, type, competition_name)
 VALUES
-( '12:30', ( SELECT type FROM rain WHERE wind_strength='10m/s' ), ( SELECT competition_name FROM competition WHERE date='2021-10-06' ) ),
-( '12:30', ( SELECT type FROM rain WHERE wind_strength='10m/s' ), ( SELECT competition_name FROM competition WHERE date='2021-10-06' ) ),
 ( '12:30', ( SELECT type FROM rain WHERE wind_strength='10m/s' ), ( SELECT competition_name FROM competition WHERE date='2021-10-06' ) );
 
 -- #4

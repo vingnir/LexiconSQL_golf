@@ -28,6 +28,7 @@ CREATE TABLE `jacket` (
   `pnr` varchar(13) NOT NULL,
   PRIMARY KEY (`pnr`,`initials`),
   FOREIGN KEY(`pnr`) references player(pnr)
+  ON DELETE CASCADE
 ) ENGINE=InnoDB;  
 
 -- checked
@@ -46,6 +47,7 @@ CREATE TABLE `club` (
   PRIMARY KEY (`nr`,`pnr`,`serial_nr`),
   FOREIGN KEY(`pnr`) references player(pnr),
   FOREIGN KEY(`serial_nr`) references construction(`serial_nr`)
+  ON DELETE CASCADE
 ) ENGINE=InnoDB;  
 
 
@@ -65,6 +67,7 @@ CREATE TABLE `competition_rain` (
   `competition_name` varchar(30) NOT NULL,
   FOREIGN KEY(`competition_name`) REFERENCES competition(competition_name),
   FOREIGN KEY(`type`) REFERENCES rain(`type`)
+  ON DELETE CASCADE
 ) ENGINE=InnoDB;  
 
 -- N-M Control
@@ -74,6 +77,7 @@ CREATE TABLE `competition_players` (
   `competition_name` varchar(30) NOT NULL,
   FOREIGN KEY(`pnr`) REFERENCES player(`pnr`),
   FOREIGN KEY(`competition_name`) REFERENCES competition(competition_name)
+  ON DELETE CASCADE
 ) ENGINE=InnoDB;  
 
 
