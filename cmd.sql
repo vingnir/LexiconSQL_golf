@@ -24,11 +24,11 @@ JOIN Rain r ON cr.type = r.type;
 SELECT * from Player where age < 30;
 
 -- #8
-DELETE from Jacket where pnr=( SELECT pnr FROM Player WHERE name='Johan Andersson' ) ;
+DELETE from Jacket where pnr=( SELECT pnr FROM Player WHERE name='Johan Andersson' AND age=25 ) ;
 
 -- #9
 DELETE FROM Player 
-WHERE name = 'Nicklas Jansson';
+WHERE name = 'Nicklas Jansson'  AND age=35;
 
 -- #10
 SELECT AVG(age)

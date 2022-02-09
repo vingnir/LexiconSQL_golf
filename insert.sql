@@ -12,9 +12,9 @@ VALUES ('Big Golf Cup Skövde','2021-10-06');
 
 INSERT INTO Competition_Players (pnr, competition_name)
 VALUES
-( ( SELECT pnr FROM Player WHERE name='Johan Andersson' ), ( SELECT competition_name FROM Competition WHERE date='2021-10-06' ) ),
-( ( SELECT pnr FROM Player WHERE name='Nicklas Jansson' ), ( SELECT competition_name FROM Competition WHERE date='2021-10-06' ) ),
-( ( SELECT pnr FROM Player WHERE name='Annika Persson' ), ( SELECT competition_name FROM Competition WHERE date='2021-10-06' ) );
+( ( SELECT pnr FROM Player WHERE name='Johan Andersson' AND age=25 ), ( SELECT competition_name FROM Competition WHERE date='2021-10-06' ) ),
+( ( SELECT pnr FROM Player WHERE name='Nicklas Jansson' AND age=35 ), ( SELECT competition_name FROM Competition WHERE date='2021-10-06' ) ),
+( ( SELECT pnr FROM Player WHERE name='Annika Persson' AND age=45 ), ( SELECT competition_name FROM Competition WHERE date='2021-10-06' ) );
 
 -- #3
 INSERT INTO Rain ( type,wind_strength)
@@ -28,8 +28,8 @@ VALUES
 
 INSERT INTO Jacket (initials, size, material, pnr)
 VALUES
-( 'J.A', 'Large', 'Fleece', ( SELECT pnr FROM Player WHERE name='Johan Andersson' ) ),
-( 'Fel', 'Medium', 'Gore-Tex', ( SELECT pnr FROM Player WHERE name='Johan Andersson' ) );
+( 'J.A', 'Large', 'Fleece', ( SELECT pnr FROM Player WHERE name='Johan Andersson' AND age=25 ) ),
+( 'Fel', 'Medium', 'Gore-Tex', ( SELECT pnr FROM Player WHERE name='Johan Andersson' AND age=25 ) );
 
 -- #5
 
@@ -41,7 +41,7 @@ VALUES
 
 INSERT INTO Club (material, pnr, serial_nr)
 VALUES
-( 'Wood', ( SELECT pnr FROM Player WHERE name='Nicklas Jansson' ), ( SELECT serial_nr FROM Construction WHERE hardness='10' ) ),
-( 'Wood', ( SELECT pnr FROM Player WHERE name='Annika Persson' ), ( SELECT serial_nr FROM Construction WHERE hardness='5' ) ),
-( 'Iron', ( SELECT pnr FROM Player WHERE name='Johan Andersson' ), ( SELECT serial_nr FROM Construction WHERE hardness='7' ) );
+( 'Wood', ( SELECT pnr FROM Player WHERE name='Nicklas Jansson' AND age=35 ), ( SELECT serial_nr FROM Construction WHERE hardness='10' ) ),
+( 'Wood', ( SELECT pnr FROM Player WHERE name='Annika Persson' AND age=45 ), ( SELECT serial_nr FROM Construction WHERE hardness='5' ) ),
+( 'Iron', ( SELECT pnr FROM Player WHERE name='Johan Andersson' AND age=25 ), ( SELECT serial_nr FROM Construction WHERE hardness='7' ) );
 
