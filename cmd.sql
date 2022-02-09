@@ -5,10 +5,10 @@ SELECT age from Player where name='Johan Andersson';
 SELECT date from Competition where competition_name='Big Golf Cup Skövde';
 
 -- #3
-SELECT material from Club where pnr=( SELECT pnr FROM Player WHERE name='Johan Andersson' ) ;
+SELECT material from Club where pnr=( SELECT pnr FROM Player WHERE name='Johan Andersson' AND age=25 ) ;
 
 -- #4
-SELECT * from Jacket where pnr=( SELECT pnr FROM Player WHERE name='Johan Andersson' ) ;
+SELECT * from Jacket where pnr=( SELECT pnr FROM Player WHERE name='Johan Andersson' AND age=25 ) ;
 
 -- #5
 SELECT p.name, cp.competition_name 
